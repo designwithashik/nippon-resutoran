@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
        return <h2>Wait a bit..</h2>
     }
     if (user) {
-        return {children}
+        return <>{children}</>
     }
     else {
         return <Navigate to='/login'></Navigate>
