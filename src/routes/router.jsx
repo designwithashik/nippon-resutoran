@@ -6,6 +6,7 @@ import Login from '../components/Authentication/Login';
 import ChefRecipes from "../components/chefs/ChefRecipes";
 import Home from '../components/Home'
 import PrivateRoute from '../routes/PrivateRoute'
+import Blog from '../components/Blog';
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
                 path: 'chefs/:id',
                 element: <PrivateRoute><ChefRecipes/></PrivateRoute>,
                 loader: ({params})=>fetch(`https://nippon-resutoran-server-designwithashik.vercel.app/chefs/${params.id}`)
+            },
+            {
+                path: 'blog',
+                element: <Blog/>
             }
 
         ]
