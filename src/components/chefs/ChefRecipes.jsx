@@ -23,7 +23,7 @@ const ChefRecipes = () => {
 
                 </Box>
             </Flex>
-            <Heading textAlign='center'>MOST POPULAR RECIPES BY <Heading color='rgba(255, 105, 40, 1)'> {name}</Heading></Heading>
+            <Heading textAlign='center'>MOST POPULAR RECIPES BY <Text fontSize='36px' fontWeight='bold' color='rgba(255, 105, 40, 1)'> {name}</Text></Heading>
             <Flex mb='120px' flexWrap='wrap' justifyContent='space-evenly'>
                 {recipes.map(recipe =><Recipe key={recipe.id} recipe={recipe}></Recipe>)}
             </Flex>

@@ -51,7 +51,8 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         fetch('https://nippon-resutoran-server-designwithashik.vercel.app/chefs')
             .then(res => res.json())
-        .then(data => setChefs(data))
+            .then(data => setChefs(data))
+            setLoading(false);
     },[])
 
 
