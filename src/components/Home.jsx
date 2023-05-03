@@ -23,9 +23,9 @@ const Home = () => {
     return (
         <>
 
-                <Flex px='20px' bgColor='rgba(217, 217, 217, 1)'>
+                <Flex px='20px' mb='120px' mt='41px' >
 
-                    <Box ml='83px' mb='102px' mt='41px'>
+                    <Box ml='83px' >
                             <Image src={bowl}></Image>
                     </Box>
 
@@ -67,7 +67,7 @@ const Home = () => {
 
             <Box mb='255px' pb='100px' pt='75px' position='relative' px='35px' bgColor='rgba(255, 226, 212, 1)'>
                 <Image position='absolute'  top='-100px' src={lemon}></Image>
-                <Heading fontWeight='semibold' textAlign='center'>Client Feedback
+                <Heading fontWeight='bold' textAlign='center'>Client Feedback
                 </Heading>
                 <Flex flexWrap={{base:'wrap', md: 'nowrap'}} gap='40px' bottom='-125px' position='absolute'>
                     <Card h='166px' bgColor='rgba(255, 105, 40, 1)' p='10px' borderRadius='xl' position='relative'>

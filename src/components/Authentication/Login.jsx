@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Button } from '@chakra-ui/react';
+import { Button, Flex, FormControl, Heading, Input } from '@chakra-ui/react';
 
 const Login = () => {
     const { googleLogIn, logOut } = useContext(AuthContext);
@@ -10,11 +10,17 @@ const Login = () => {
         .catch(error=>console.log(error))
     }
     return (
-        <div>
-            <h2>Login Here</h2>
-            <Button onClick={handleGoogleLogIn}>Google Log In</Button>
-            <Button onClick={logOut}>Log Out</Button>
-        </div>
+        <Flex  h='calc(100vh - 242.8px)' gap='2px' alignItems='center' justifyContent='center'>
+            <FormControl  w={{ base: '210px', md: '400px' }}>
+                <Heading mb='30px' textAlign='center'>Please Log In</Heading>
+                <Input mb='20px' placeholder='Enter Email' name='email' required></Input>
+                <Input placeholder='Enter Password' name='password' required></Input>
+                <Flex justifyContent='center'><Button mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>LOG IN</Button></Flex>
+            </FormControl>
+            
+           
+
+        </Flex>
     );
 };
 
