@@ -12,7 +12,7 @@ const NavigationBar = () => {
             <Flex alignItems='center' gap={{base:'30px', md:'48px', lg:'78px'}}>
                 <ActiveLink to='/'>Home</ActiveLink>
                 <ActiveLink to='/blog'>Blog</ActiveLink>
-                {user ? <Image h='60px' w='60px' borderRadius='full'></Image>:<Link to='/login'><Button>Login</Button></Link>}
+                {user ? <Image title={user.displayName} src={user.photoURL} h='40px' w='40px' borderRadius='full'></Image> : <Link to='/login'><Button>Login</Button></Link>}
             </Flex>
         </Flex>
     );

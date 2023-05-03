@@ -23,9 +23,9 @@ const router = createBrowserRouter([
                 
             },
             {
-                path: 'chefs/:id',
+                path: 'chef/:id',
                 element: <PrivateRoute><ChefRecipes/></PrivateRoute>,
-                loader: ({params})=>fetch(`https://nippon-resutoran-server-designwithashik.vercel.app/chefs/${params.id}`)
+                loader: ({params})=>fetch(`https://nippon-resutoran-server-designwithashik.vercel.app/chef/${params.id}`)
             },
             {
                 path: 'blog',

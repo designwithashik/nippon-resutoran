@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <h2>Alhamdulillah</h2>
-            <Link to={`chefs/1003`}>Chef Recipes</Link>
+            <Link to={`chef/1003`}>Chef Recipes</Link>
         </div>
     );
 };
