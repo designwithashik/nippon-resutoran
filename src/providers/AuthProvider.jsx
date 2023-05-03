@@ -17,15 +17,19 @@ const AuthProvider = ({ children }) => {
 
 
     const emailSignUp = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const emailLogIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
     const googleLogIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
     const githubLogIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
 
