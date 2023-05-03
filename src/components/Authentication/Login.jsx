@@ -4,13 +4,19 @@ import { Box, Button, Flex, FormControl, Heading, Input, Text } from '@chakra-ui
 import { Link } from 'react-router-dom';
 
 const Login = () => {
-    const { googleLogIn, githubLogIn, logOut } = useContext(AuthContext);
+    const { googleLogIn, githubLogIn, logOut, emailLogIn, error, setError } = useContext(AuthContext);
     const handleEmailLogIn = (event) => {
         event.preventDefault()
+        setError('')
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        console.log(email, password);
+        emailLogIn(email, password)
+            .then(result => console.log(result.user))
+        .catch(error=>setError('Invalid email or password !!'))
+        form.reset()
+
 
         
     }
@@ -22,7 +28,7 @@ const Login = () => {
     const handleGithubLogIn = () => {
         githubLogIn()
             .then(result => console.log(result.user))
-        .catch(error=>console.log(error))
+            .catch(error => console.log(error))
     }
     return (
         <Flex flexDirection='column' gap='10px'  h='calc(100vh - 242.8px)' alignItems='center' justifyContent='center'>
@@ -31,6 +37,7 @@ const Login = () => {
                 <form onSubmit={handleEmailLogIn}>
                     <Input mb='20px' placeholder='Enter Email' type='email' name='email' required></Input>
                     <Input placeholder='Enter Password' type='password' name='password' required></Input>
+                    <Text fontWeight='medium' color='red.600'>{error}</Text>
                     <Flex justifyContent='center'><Button type='submit' mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>LOG IN</Button></Flex>
                 </form>
             </Box>
