@@ -3,23 +3,23 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { Box, Button, Flex, FormControl, Heading, Input, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     const { googleLogIn, githubLogIn, logOut } = useContext(AuthContext);
-    const handleEmailLogIn = (event) => {
+    const handleEmailSignUp = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password)
-
+        
         
     }
-    const handleGoogleLogIn = () => {
+    const handleGoogleSignUp = () => {
         googleLogIn()
             .then(result => console.log(result.user))
         .catch(error=>console.log(error))
     }
-    const handleGithubLogIn = () => {
+    const handleGithubSignUp = () => {
         githubLogIn()
             .then(result => console.log(result.user))
         .catch(error=>console.log(error))
@@ -27,23 +27,23 @@ const Login = () => {
     return (
         <Flex flexDirection='column' gap='10px'  h='calc(100vh - 242.8px)' alignItems='center' justifyContent='center'>
             <Box  w={{ base: '210px', md: '400px' }}>
-                <Heading mb='30px' textAlign='center'>Please Log In</Heading>
-                <form onSubmit={handleEmailLogIn}>
+                <Heading mb='30px' textAlign='center'>Sign Up Now</Heading>
+                <form onSubmit={handleEmailSignUp}>
                     <Input mb='20px' placeholder='Enter Email' type='email' name='email' required></Input>
                     <Input placeholder='Enter Password' type='password' name='password' required></Input>
-                    <Flex justifyContent='center'><Button type='submit' mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>LOG IN</Button></Flex>
+                    <Flex justifyContent='center'><Button type='submit' mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>SIGN UP</Button></Flex>
+                    
                 </form>
             </Box>
-            <Text>Don't Have an Account? <Link to='/sign-up'><Text as='span' fontWeight='bold' color='rgba(255, 105, 40, 1)'>Sign Up Here</Text></Link></Text>
-
+            <Text>Already Have an Account? <Link to='/login'><Text as='span' fontWeight='bold' color='rgba(255, 105, 40, 1)'>Log In Here</Text></Link></Text>
             <Text>OR</Text>
 
-            <Flex gap='30px'><Button onClick={handleGoogleLogIn} colorScheme='green'>Sign In With Google</Button>
-            <Button onClick={handleGithubLogIn} colorScheme='blackAlpha'>Sign In With Github</Button></Flex>
+            <Flex gap='30px'><Button onClick={handleGoogleSignUp} colorScheme='green'>Sign Up With Google</Button>
+            <Button onClick={handleGithubSignUp} colorScheme='blackAlpha'>Sign Up With Github</Button></Flex>
            
 
         </Flex>
     );
 };
 
-export default Login;
+export default Register;
