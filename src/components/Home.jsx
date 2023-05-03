@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import { Link } from 'react-router-dom';
-import { Box, Button, Card, Flex, Heading, Image, ScaleFade, Text, useDisclosure } from '@chakra-ui/react';
+import { Box, Button, Card, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import ChefCard from './chefs/ChefCard';
 
 /**
@@ -19,20 +19,14 @@ const Home = () => {
     
     const { chefs } = useContext(AuthContext);
     console.log(chefs)
-    const { isOpen, onToggle } = useDisclosure()
-    useEffect(() => {
-        onToggle()
-    }, [])
+   
     return (
         <>
-            <Box px='20px'>
 
-                <Flex>
+                <Flex px='20px' bgColor='rgba(217, 217, 217, 1)'>
 
                     <Box ml='83px' mb='102px' mt='41px'>
-                        <ScaleFade initialScale={2.9} in={isOpen}>
                             <Image src={bowl}></Image>
-                        </ScaleFade>
                     </Box>
 
                     <Flex ml='auto' mr='164px' flexDir='column' gap='10px' justifyContent='center'>
@@ -41,14 +35,15 @@ const Home = () => {
                     </Flex>
 
                 </Flex>
+             
 
-                <Box>
+                <Box px='20px'>
                     <Heading textAlign='center'>MOST POPULAR CHEFS</Heading>
                     <Flex flexWrap='wrap' justifyContent='space-evenly'>
                         {chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)}
                     </Flex>
                 </Box>
-            </Box>
+          
 
             <Box textColor='white' padding='35px' bgColor='rgba(31, 31, 31, 1)'>
                 <Heading fontWeight='medium' textAlign='center'>Simplest Way <br />
@@ -58,9 +53,6 @@ const Home = () => {
             </Box>
 
             <Flex>
-
-                
-
                 <Flex  ml='83px' mb='102px' mt='41px'   flexDir='column' gap='10px' justifyContent='center'>
                     <Heading >OUR</Heading><Heading>THE BEST</Heading><Heading color='rgba(255, 105, 40, 1)'> SIGNATURE DISH</Heading>
                     <Text fontWeight='bold'>Our cuisine has a purpose of satisfying the hunger and the needs of a customer. We are dedicated to serve that purpose.</Text>
@@ -82,8 +74,8 @@ const Home = () => {
                         <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client1}></Image>
                         <Text mt='19px' fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
                     </Card>
-                    <Card h='166px' bgColor='rgba(255, 105, 40, 1)' p='10px' borderRadius='xl' position='relative'>
-                        <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client1}></Image>
+                    <Card h='166px' bgColor='rgba(0, 0, 0, 0.9)' p='10px' borderRadius='xl' position='relative'>
+                        <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client2}></Image>
                         <Text mt='19px' fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
                     </Card>
                 </Flex>
