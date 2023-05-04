@@ -12,7 +12,7 @@ const options = {
 const Blog = () => {
     return (
         <Box px={{ base: '20px', md: '100px', lg: '165px' }} my='120px'>
-            <Heading>React to PDF</Heading>
+            <Heading>Download These Q&A as PDF!!</Heading>
             <ReactToPdf targetRef={ref} filename="code-example.pdf" options={options} x={.5} y={.5} scale={0.8}>
                 {({ toPdf }) => <Button my='50px' onClick={toPdf}>Generate As PDF</Button>}
             </ReactToPdf>
