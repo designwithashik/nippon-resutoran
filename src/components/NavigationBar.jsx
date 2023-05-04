@@ -7,8 +7,8 @@ import { AuthContext } from '../providers/AuthProvider';
 const NavigationBar = () => {
     const {user, logOut} = useContext(AuthContext)
     return (
-        <Flex gap='30px' flexDir={{base: 'column', md: 'row'}}>
-            <Text  fontWeight='bold' flexGrow='1' fontSize='24px' color='white'>Nippon Resutoran</Text>
+        <Flex justifyContent='space-between' gap='30px' flexDir={{base: 'column', md: 'row'}}>
+            <Link to='/'><Text  fontWeight='bold'  fontSize='24px' color='white'>Nippon Resutoran</Text></Link>
             <Flex flexDir={{base: 'column', md: 'row'}} alignItems='center' gap={{base:'30px', md:'48px', lg:'78px'}}>
                 <ActiveLink to='/'>Home</ActiveLink>
                 <ActiveLink to='/blog'>Blog</ActiveLink>

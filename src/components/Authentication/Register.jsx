@@ -1,27 +1,44 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { Box, Button, Flex, FormControl, Heading, Input, Text } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
-    const { googleLogIn, githubLogIn, logOut, emailSignUp, error, setError } = useContext(AuthContext);
+    const [name, setName] = useState('');
+    const [image, setImage] = useState('');
+    // console.log(name)
+    const { googleLogIn, setUser, githubLogIn, auth, user, emailSignUp, error, setError, updateUser } = useContext(AuthContext);
+   
     const handleEmailSignUp = (event) => {
         event.preventDefault()
         setError('')
         const form = event.target;
-        const name = form.name.value;
+   
+        setName(form.name.value)
         const email = form.email.value;
         const password = form.password.value;
-        const photo = form.photo.value;
+    
+        setImage(form.photo.value)
         console.log(email, password)
         if (password.length < 6) {
             setError('password length must be least 6 characters')
             return
         }
         emailSignUp(email, password)
-            .then(result => console.log(result.user))
+            .then(result => {
+                updateProfile(result.user, {
+                    displayName: `${name}`,
+                    photoURL: `${image}`
+                });
+                console.log(result.user)
+                setUser(result.user)
+            }
+        )
             .catch(error => setError('Please Try Again '))
+            
         form.reset()
+       
     }
     const handleGoogleSignUp = () => {
         googleLogIn()
