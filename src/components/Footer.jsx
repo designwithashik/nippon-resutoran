@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <Flex><div>
+        <Flex gap='30px' flexDir={{ base:'column', md: 'row'}}><div>
             <Heading fontSize='24px' mb='43px'>CONTACT US   23 88 994</Heading>
             <Text fontWeight='light' fontSize='14px'>Ⓒ All Rights Reserved Nippon Resutoran </Text>
         </div>

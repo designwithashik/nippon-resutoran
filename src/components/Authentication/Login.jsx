@@ -43,7 +43,7 @@ const Login = () => {
         
     }
     return (
-        <Flex flexDirection='column' gap='10px'  h='calc(100vh - 242.8px)' alignItems='center' justifyContent='center'>
+        <Flex my={{base: '120px', md: '0px'}} mx={{base: '20px', md: '0px'}} flexDirection='column' gap='10px'  h={{md:'calc(100vh - 252.8px)'}} alignItems='center' justifyContent='center'>
             <Box  w={{ base: '210px', md: '400px' }}>
                 <Heading mb='30px' textAlign='center'>Please Log In</Heading>
                 <form onSubmit={handleEmailLogIn}>
@@ -57,7 +57,7 @@ const Login = () => {
 
             <Text>OR</Text>
 
-            <Flex gap='30px'><Button onClick={handleGoogleLogIn} colorScheme='green'>Sign In With Google</Button>
+            <Flex gap='30px' flexDir={{ base:'column', md: 'row'}}><Button onClick={handleGoogleLogIn} colorScheme='green'>Sign In With Google</Button>
             <Button onClick={handleGithubLogIn} colorScheme='blackAlpha'>Sign In With Github</Button></Flex>
            
 

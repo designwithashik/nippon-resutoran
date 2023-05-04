@@ -32,15 +32,15 @@ const Home = () => {
     }
     return (
 
-        <><Flex px={{base:'20px', md: '100px', lg: '165px'}} mb='120px' mt='41px' justifyContent='space-evenly' >
+        <><Flex gap='30px' flexDir={{ base:'column', md: 'row'}} px={{base:'20px', md: '100px', lg: '165px'}} mb='120px' py='41px' bgColor='rgba(255, 105, 40, 1)' borderBottomRadius={{md:'35%'}} justifyContent={{base:'center',md:'space-evenly'}} >
 
-            <Box ml='83px' >
-                <Image src={bowl}></Image>
-            </Box>
+            <Flex justifyContent='center' w='100%'>
+                <Image w='45%' src={bowl}></Image>
+            </Flex>
 
-            <Flex   flexDir='column' gap='10px' justifyContent='center'>
+            <Flex textAlign={{base: 'center', md:'left'}} w='100%'  flexDir='column' gap='10px' justifyContent='center'>
                 <Heading >TASTE OUR</Heading><Heading>DELICIOUS</Heading><Heading> NIPPON FOODS</Heading>
-                <Flex justifyContent='center'><Button mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>ORDER NOW</Button></Flex>
+                <Flex justifyContent={{base: 'center',md:'flex-start'}}><Button mt='16px' borderRadius='3xl' >ORDER NOW</Button></Flex>
             </Flex>
 
         </Flex>
@@ -54,38 +54,38 @@ const Home = () => {
             </Box>
 
 
-            <Box textColor='white' py='40px' px={{base:'20px', md: '100px', lg: '165px'}} bgColor='rgba(31, 31, 31, 1)'>
+            <Box my='120px' textColor='white' py='40px' px={{base:'20px', md: '100px', lg: '165px'}} bgColor='rgba(31, 31, 31, 1)'>
                 <Heading fontWeight='medium' textAlign='center'>Simplest Way <br />
                     Of  Eating Delicious Japanese Foods Abroad
                 </Heading>
                 <Text fontWeight='light' my='30px' mx={{ lg: '200px' }} textAlign='left'>People love Japanese food More. A japanese-food cuisine consists of a business model that serves food usually prepared specifically. A well maintained japanese cuisine has a purpose of satisfying the hunger and the needs of a customer. We are dedicated to serve that purpose. </Text>
             </Box>
 
-            <Flex px={{base:'20px', md: '100px', lg: '165px'}}>
-                <Flex ml='83px' mb='102px' mt='41px' flexDir='column' gap='10px' justifyContent='center'>
+            <Flex gap='30px' flexDir={{ base:'column', md: 'row'}} px={{base:'20px', md: '100px', lg: '165px'}}>
+                <Flex w='100%' flexDir='column' gap='10px' justifyContent='center'>
                     <Heading >OUR</Heading><Heading>THE BEST</Heading><Heading color='rgba(255, 105, 40, 1)'> SIGNATURE DISH</Heading>
                     <Text fontWeight='bold'>Our cuisine has a purpose of satisfying the hunger and the needs of a customer. We are dedicated to serve that purpose.</Text>
                     <Flex><Button mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>ORDER NOW</Button></Flex>
                 </Flex>
-                <Box position='relative' w='full' mt='41px' mr='164px'>
-                    <Image ml='auto' src={signature_dish}></Image>
-                    <Heading textAlign='end' mt='30px'>Gyudon</Heading>
-                </Box>
+                <Flex flexDir='column' alignItems='center' justifyContent='center' w='full' mt='41px'>
+                    <Image w='35%' src={signature_dish}></Image>
+                    <Heading  mt='30px'>Gyudon</Heading>
+                </Flex>
             </Flex>
 
 
-            <Box  px={{base:'20px', md: '100px', lg: '165px'}} mb='255px' pb='100px' pt='75px' position='relative' bgColor='rgba(255, 226, 212, 1)'>
-                <Image position='absolute' top='-100px' src={lemon}></Image>
+            <Box mt={{base:'200px', md: '120px'}} mb={{base: '400px', md: '220px'}}   px={{base:'20px', md: '100px', lg: '165px'}} pb='100px' pt='75px' position='relative' bgColor='rgba(255, 226, 212, 1)'>
+                <Image position='absolute' top={{ base:'-130px', md:'-100px'}} src={lemon}></Image>
                 <Heading fontWeight='bold' textAlign='center'>Client Feedback
                 </Heading>
-                <Flex flexWrap={{ base: 'wrap', md: 'nowrap' }}  px={{base:'20px', md: '100px', lg: '165px'}} gap='40px' bottom='-125px' position='absolute'>
-                    <Card h='166px' bgColor='rgba(255, 105, 40, 1)' p='10px' borderRadius='xl' position='relative'>
+                <Flex gap='30px' flexDir={{ base: 'column', md: 'row' }} flexWrap={{ base: 'wrap', md: 'nowrap' }} px={{ base: '20px', md: '100px', lg: '165px' }} bottom={{ base:'-295px',md:'-125px'}} position='absolute' justifyContent='space-evenly'>
+                    <Card w={{base:'75%',md:'30%'}} bgColor='rgba(255, 105, 40, 1)' p='10px' borderRadius='xl' position='relative'>
                         <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client1}></Image>
-                        <Text mt='19px' fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
+                        <Text mt='19px' fontSize={{ base: 'sm', lg:'md'}} fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
                     </Card>
-                    <Card h='166px' bgColor='rgba(0, 0, 0, 0.9)' p='10px' borderRadius='xl' position='relative'>
+                    <Card display={{ base: 'none', md:'block'}}  w={{base:'75%',md:'30%'}} bgColor='rgba(0, 0, 0, 0.9)' p='10px' borderRadius='xl' position='relative'>
                         <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client2}></Image>
-                        <Text mt='19px' fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
+                        <Text mt='19px' fontWeight='light' fontSize={{ base: 'sm', lg:'md'}} color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
                     </Card>
                 </Flex>
             </Box> </>

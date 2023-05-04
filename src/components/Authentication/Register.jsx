@@ -34,7 +34,7 @@ const Register = () => {
         .catch(error=>console.log(error))
     }
     return (
-        <Flex flexDirection='column' gap='10px'  h='calc(100vh - 242.8px)' alignItems='center' justifyContent='center'>
+        <Flex my={{base: '120px', md: '0px'}} mx={{base: '20px', md: '0px'}} flexDirection='column' gap='10px'  h={{md:'calc(100vh - 252.8px)'}} alignItems='center' justifyContent='center'>
             <Box  w={{ base: '210px', md: '400px' }}>
                 <Heading mb='30px' textAlign='center'>Sign Up Now</Heading>
                 <form onSubmit={handleEmailSignUp}>
@@ -52,7 +52,7 @@ const Register = () => {
             <Text>Already Have an Account? <Link to='/login'><Text as='span' fontWeight='bold' color='rgba(255, 105, 40, 1)'>Log In Here</Text></Link></Text>
             <Text>OR</Text>
 
-            <Flex gap='30px'><Button onClick={handleGoogleSignUp} colorScheme='green'>Sign Up With Google</Button>
+            <Flex gap='30px' flexDir={{base:'column', md:'row'}}><Button onClick={handleGoogleSignUp} colorScheme='green'>Sign Up With Google</Button>
             <Button onClick={handleGithubSignUp} colorScheme='blackAlpha'>Sign Up With Github</Button></Flex>
            
 
