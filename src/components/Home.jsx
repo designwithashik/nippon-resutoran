@@ -34,12 +34,12 @@ const Home = () => {
 
         <><Flex gap='30px' flexDir={{ base:'column', md: 'row'}} px={{base:'20px', md: '100px', lg: '165px'}} mb='120px' py='41px' bgColor='rgba(255, 105, 40, 1)' borderBottomRadius={{md:'35%'}} justifyContent={{base:'center',md:'space-evenly'}} >
 
-            <Flex justifyContent='center' w='100%'>
+            <Flex h='100%' justifyContent='center' w='100%'>
                 <Image w='45%' src={bowl}></Image>
             </Flex>
 
             <Flex textAlign={{base: 'center', md:'left'}} w='100%'  flexDir='column' gap='10px' justifyContent='center'>
-                <Heading >TASTE OUR</Heading><Heading>DELICIOUS</Heading><Heading> NIPPON FOODS</Heading>
+                <Heading >TASTE THE</Heading><Heading>DELICIOUS</Heading><Heading> NIPPON FOODS</Heading>
                 <Flex justifyContent={{base: 'center',md:'flex-start'}}><Button mt='16px' borderRadius='3xl' >ORDER NOW</Button></Flex>
             </Flex>
 
@@ -48,7 +48,7 @@ const Home = () => {
 
             <Box px={{base:'20px', md: '100px', lg: '165px'}}>
                 <Heading textAlign='center'>MOST POPULAR CHEFS</Heading>
-                <Flex flexWrap='wrap' justifyContent='space-evenly'>
+                <Flex flexWrap='wrap' gap='30px' justifyContent='space-evenly'>
                     {chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)}
                 </Flex>
             </Box>

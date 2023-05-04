@@ -1,12 +1,14 @@
 import { Box, Button, Card, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chef }) => {
     const { name, likes, image, number_of_recipes, years_of_experience, id } = chef
     return (
         <Flex position='relative' border='1px solid rgba(255, 105, 42, 1)' bgColor='rgba(217, 217, 217, 1)' textAlign='center' w='199px' p='23px' flexDir='column' borderRadius='full' my='30px'>
-            <Image borderRadius='full' h='auto' w='full' src={image}></Image>
+            <LazyLoad height='100%' offset={270}><Image borderRadius='full' h='auto' w='full' src={image}></Image></LazyLoad>
+            
             <Heading fontSize='16px' my='20px'>{name}</Heading>
             <Box p='12px'  color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'><Text>Total Recipes</Text>
                 <Heading fontSize='19px'>{number_of_recipes}</Heading>
