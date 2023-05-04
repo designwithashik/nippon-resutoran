@@ -32,13 +32,13 @@ const Home = () => {
     }
     return (
 
-        <><Flex px='20px' mb='120px' mt='41px' >
+        <><Flex px={{base:'20px', md: '100px', lg: '165px'}} mb='120px' mt='41px' justifyContent='space-evenly' >
 
             <Box ml='83px' >
                 <Image src={bowl}></Image>
             </Box>
 
-            <Flex ml='auto' mr='164px' flexDir='column' gap='10px' justifyContent='center'>
+            <Flex   flexDir='column' gap='10px' justifyContent='center'>
                 <Heading >TASTE OUR</Heading><Heading>DELICIOUS</Heading><Heading> NIPPON FOODS</Heading>
                 <Flex justifyContent='center'><Button mt='16px' color='white' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>ORDER NOW</Button></Flex>
             </Flex>
@@ -46,7 +46,7 @@ const Home = () => {
         </Flex>
 
 
-            <Box px='20px'>
+            <Box px={{base:'20px', md: '100px', lg: '165px'}}>
                 <Heading textAlign='center'>MOST POPULAR CHEFS</Heading>
                 <Flex flexWrap='wrap' justifyContent='space-evenly'>
                     {chefs.map(chef => <ChefCard key={chef.id} chef={chef}></ChefCard>)}
@@ -54,14 +54,14 @@ const Home = () => {
             </Box>
 
 
-            <Box textColor='white' padding='35px' bgColor='rgba(31, 31, 31, 1)'>
+            <Box textColor='white' py='40px' px={{base:'20px', md: '100px', lg: '165px'}} bgColor='rgba(31, 31, 31, 1)'>
                 <Heading fontWeight='medium' textAlign='center'>Simplest Way <br />
                     Of  Eating Delicious Japanese Foods Abroad
                 </Heading>
                 <Text fontWeight='light' my='30px' mx={{ lg: '200px' }} textAlign='left'>People love Japanese food More. A japanese-food cuisine consists of a business model that serves food usually prepared specifically. A well maintained japanese cuisine has a purpose of satisfying the hunger and the needs of a customer. We are dedicated to serve that purpose. </Text>
             </Box>
 
-            <Flex>
+            <Flex px={{base:'20px', md: '100px', lg: '165px'}}>
                 <Flex ml='83px' mb='102px' mt='41px' flexDir='column' gap='10px' justifyContent='center'>
                     <Heading >OUR</Heading><Heading>THE BEST</Heading><Heading color='rgba(255, 105, 40, 1)'> SIGNATURE DISH</Heading>
                     <Text fontWeight='bold'>Our cuisine has a purpose of satisfying the hunger and the needs of a customer. We are dedicated to serve that purpose.</Text>
@@ -74,11 +74,11 @@ const Home = () => {
             </Flex>
 
 
-            <Box mb='255px' pb='100px' pt='75px' position='relative' px='35px' bgColor='rgba(255, 226, 212, 1)'>
+            <Box  px={{base:'20px', md: '100px', lg: '165px'}} mb='255px' pb='100px' pt='75px' position='relative' bgColor='rgba(255, 226, 212, 1)'>
                 <Image position='absolute' top='-100px' src={lemon}></Image>
                 <Heading fontWeight='bold' textAlign='center'>Client Feedback
                 </Heading>
-                <Flex flexWrap={{ base: 'wrap', md: 'nowrap' }} gap='40px' bottom='-125px' position='absolute'>
+                <Flex flexWrap={{ base: 'wrap', md: 'nowrap' }}  px={{base:'20px', md: '100px', lg: '165px'}} gap='40px' bottom='-125px' position='absolute'>
                     <Card h='166px' bgColor='rgba(255, 105, 40, 1)' p='10px' borderRadius='xl' position='relative'>
                         <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client1}></Image>
                         <Text mt='19px' fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>

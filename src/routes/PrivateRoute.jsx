@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { Box, Flex, Spinner } from '@chakra-ui/react';
 
 const PrivateRoute = ({ children }) => {
     const { loading, user } = useContext(AuthContext);
+    const location = useLocation()
+    console.log(location)
     if(loading) {
         return <Flex justifyContent='center' alignItems='center' h='80vh'>
             <Spinner 
@@ -20,7 +22,7 @@ const PrivateRoute = ({ children }) => {
         return <>{children}</>
     }
     else {
-        return <Navigate to='/login'></Navigate>
+        return <Navigate state={{from: location}} replace to='/login'></Navigate>
     }
 };
 

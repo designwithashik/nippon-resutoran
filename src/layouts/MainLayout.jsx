@@ -8,9 +8,9 @@ const MainLayout = () => {
 
     return (
         <div>
-            <Box padding='20px' bgColor='rgba(255, 105, 40, 1)'><NavigationBar /></Box>
+            <Box py='20px' px={{base:'20px', md: '100px', lg: '165px'}} bgColor='rgba(255, 105, 40, 1)'><NavigationBar /></Box>
             <Box ><Outlet /></Box>
-            <Box textColor='white' padding='35px' bgColor='rgba(31, 31, 31, 1)'><Footer /></Box>
+            <Box textColor='white' py='40px' px={{base:'20px', md: '100px', lg: '165px'}} bgColor='rgba(31, 31, 31, 1)'><Footer /></Box>
         </div>
     );
 };

@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import { Box, Button, Flex, FormControl, Heading, Input, Text } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Box, Button, Flex, FormControl, Heading, Input, Text, useLatestRef } from '@chakra-ui/react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { googleLogIn, githubLogIn, logOut, emailLogIn, error, setError } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
     const handleEmailLogIn = (event) => {
         event.preventDefault()
         setError('')
@@ -13,22 +16,31 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
         emailLogIn(email, password)
-            .then(result => console.log(result.user))
+            .then(result => {
+                console.log(result.user)
+                navigate(from, {replace: true})
+            }
+            )
         .catch(error=>setError('Invalid email or password !!'))
         form.reset()
-
-
         
     }
     const handleGoogleLogIn = () => {
         googleLogIn()
-            .then(result => console.log(result.user))
-        .catch(error=>console.log(error))
+            .then(result => {
+                 console.log(result.user)
+                 navigate(from, {replace: true})
+            })
+            .catch(error => console.log(error))
+        
     }
     const handleGithubLogIn = () => {
         githubLogIn()
-            .then(result => console.log(result.user))
+        .then(result => {console.log(result.user)
+            navigate(from, {replace: true})}
+            )
             .catch(error => console.log(error))
+        
     }
     return (
         <Flex flexDirection='column' gap='10px'  h='calc(100vh - 242.8px)' alignItems='center' justifyContent='center'>
