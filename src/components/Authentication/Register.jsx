@@ -8,7 +8,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
 
-    const { googleLogIn, setUser, githubLogIn, emailSignUp, error, setError, auth } = useContext(AuthContext);
+    const { setUser, emailSignUp, error, setError } = useContext(AuthContext);
    
     const handleEmailSignUp = (event) => {
         event.preventDefault()
@@ -48,16 +48,7 @@ const Register = () => {
         form.reset()
        
     }
-    const handleGoogleSignUp = () => {
-        googleLogIn()
-            .then(result => console.log(result.user))
-        .catch(error=>console.log(error))
-    }
-    const handleGithubSignUp = () => {
-        githubLogIn()
-            .then(result => console.log(result.user))
-        .catch(error=>console.log(error))
-    }
+    
     return (
         <Flex my={{base: '120px', md: '0px'}} mx={{base: '20px', md: '0px'}} flexDirection='column' gap='10px'  h={{md:'calc(100vh - 252.8px)'}} alignItems='center' justifyContent='center'>
             <Box  w={{ base: '210px', md: '400px' }}>
@@ -75,10 +66,8 @@ const Register = () => {
                 </form>
             </Box>
             <Text>Already Have an Account? <Link to='/login'><Text as='span' fontWeight='bold' color='rgba(255, 105, 40, 1)'>Log In Here</Text></Link></Text>
-            <Text>OR</Text>
 
-            <Flex gap='30px' flexDir={{base:'column', md:'row'}}><Button onClick={handleGoogleSignUp} colorScheme='green'>Sign Up With Google</Button>
-            <Button onClick={handleGithubSignUp} colorScheme='blackAlpha'>Sign Up With Github</Button></Flex>
+            
            
 
         </Flex>
