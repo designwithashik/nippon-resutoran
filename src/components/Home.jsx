@@ -74,7 +74,7 @@ const Home = () => {
             </Flex>
 
 
-            <Box mt='120px'   px={{base:'20px', md: '100px', lg: '165px'}} py='100px'  position='relative' bgColor='rgba(255, 226, 212, 1)'>
+            <Box mt='240px'   px={{base:'20px', md: '100px', lg: '165px'}} py='100px'  position='relative' bgColor='rgba(255, 226, 212, 1)'>
                 <Image position='absolute' top={{ base:'-130px', md:'-100px'}} src={lemon}></Image>
                 <Heading fontWeight='bold' textAlign='center'>Client Feedback
                 </Heading>
