@@ -38,15 +38,10 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
 
     }
-    const updateUser = (name, image) => {
-        console.log('Inside Update', name, image)
-        return updateProfile(auth.currentUser, {
-            displayName: `${name}`, photoURL: `${image}`
-          })
-    } 
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
+        
             setUser(currentUser);
             setLoading(false);
 
@@ -78,7 +73,8 @@ const AuthProvider = ({ children }) => {
         emailSignUp,
         setError,
         setUser,
-        updateUser
+        setLoading
+        
     }
     return (
         <AuthContext.Provider value={authInfo}>

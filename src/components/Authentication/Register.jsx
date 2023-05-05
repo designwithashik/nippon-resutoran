@@ -7,8 +7,8 @@ import { updateProfile } from 'firebase/auth';
 const Register = () => {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
-    // console.log(name)
-    const { googleLogIn, setUser, githubLogIn, auth, user, emailSignUp, error, setError, updateUser } = useContext(AuthContext);
+
+    const { googleLogIn, setUser, githubLogIn, emailSignUp, error, setError } = useContext(AuthContext);
    
     const handleEmailSignUp = (event) => {
         event.preventDefault()
@@ -35,7 +35,7 @@ const Register = () => {
                 setUser(result.user)
             }
         )
-            .catch(error => setError('Please Try Again '))
+            .catch(error => setError('something went wrong, please try again!'))
             
         form.reset()
        

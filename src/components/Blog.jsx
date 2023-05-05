@@ -1,22 +1,57 @@
 import { Box, Button, Heading, Text } from '@chakra-ui/react';
-import React from 'react';
-import ReactToPdf from "react-to-pdf";
+import React, { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
-const ref = React.createRef();
-const options = {
-    orientation: 'landscape',
-    unit: 'in',
-    format: [10,15]
-};
+// import ReactToPdf from "react-to-pdf";
+
+// const options = {
+//     orientation: 'landscape',
+//     unit: 'in',
+//     format: [10,15]
+// };
 
 const Blog = () => {
+    const {setLoading, loading} = useContext(AuthContext)
+    const downloadPDF = () =>{
+        const capture = document.querySelector('.actual-receipt');
+        setLoading(true);
+        html2canvas(capture).then((canvas)=>{
+          const imgData = canvas.toDataURL('img/png');
+          const doc = new jsPDF('l', 'mm', [500,550]);
+          const componentWidth = doc.internal.pageSize.getWidth();
+          const componentHeight = doc.internal.pageSize.getHeight();
+          doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+          setLoading(false);
+          doc.save('receipt.pdf');
+        })
+      }
     return (
         <Box px={{ base: '20px', md: '100px', lg: '165px' }} my='120px'>
             <Heading>Download These Q&A as PDF!!</Heading>
-            <ReactToPdf targetRef={ref} filename="code-example.pdf" options={options} x={.5} y={.5} scale={0.8}>
+            {/* <ReactToPdf targetRef={ref} filename="code-example.pdf" options={options} x={.5} y={.5} scale={0.8}>
                 {({ toPdf }) => <Button my='50px' onClick={toPdf}>Generate As PDF</Button>}
-            </ReactToPdf>
-            <Box  ref={ref}>
+            </ReactToPdf> */}
+                      <div className="receipt-actions-div">
+            <div className="actions-right">
+              <button
+                className="receipt-modal-download-button"
+                onClick={downloadPDF}
+                disabled={!(loading===false)}
+              >
+                {loading?(
+                  <span>Downloading</span>
+                ):(
+                  <span>Download</span>
+                )}
+
+              </button> 
+            </div>
+          </div>
+
+
+            <Box  className='actual-receipt' >
 
                 <Box  mb='30px' >
                     <Heading color='rgba(255, 105, 40, 1)'>Question 1</Heading>

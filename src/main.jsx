@@ -7,10 +7,14 @@ import AuthProvider from './providers/AuthProvider.jsx'
 import { RouterProvider } from 'react-router-dom'
 import router from './routes/router.jsx'
 import toast, { Toaster } from 'react-hot-toast';
+import "@fontsource/bitter/700.css"
+import "@fontsource/poppins"
+import theme from '../theme.font.js'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <AuthProvider>
         <RouterProvider router={router} />
         <Toaster/>
