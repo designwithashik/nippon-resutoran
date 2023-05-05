@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom';
 import { Box, Button, Card, Flex, Heading, Image, Spinner, Text } from '@chakra-ui/react';
 import ChefCard from './chefs/ChefCard';
 
-/**
- * 
- *  https://i.ibb.co/x2DbHWH/Ellipse-1.png
-https://i.ibb.co/QrFZ8bV/png-transparent-ripe-lemons-juice-soft-drink-lemonade-fruit-lemon-natural-foods-food-dried-fruit-rem.png
- */
+
 
 const Home = () => {
     const bowl = 'https://i.ibb.co/x2DbHWH/Ellipse-1.png'
