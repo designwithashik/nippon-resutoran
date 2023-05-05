@@ -8,7 +8,7 @@ const Register = () => {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
 
-    const { googleLogIn, setUser, githubLogIn, emailSignUp, error, setError } = useContext(AuthContext);
+    const { googleLogIn, setUser, githubLogIn, emailSignUp, error, setError, auth } = useContext(AuthContext);
    
     const handleEmailSignUp = (event) => {
         event.preventDefault()
@@ -21,6 +21,14 @@ const Register = () => {
     
         setImage(form.photo.value)
         console.log(email, password)
+        if(!email){
+            setError('email field cannot be empty')
+            return
+        }
+        if(!password){
+            setError('password field cannot be empty')
+            return
+        }
         if (password.length < 6) {
             setError('password length must be least 6 characters')
             return

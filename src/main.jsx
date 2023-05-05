@@ -8,7 +8,7 @@ import { RouterProvider } from 'react-router-dom'
 import router from './routes/router.jsx'
 import toast, { Toaster } from 'react-hot-toast';
 import "@fontsource/bitter/700.css"
-import "@fontsource/poppins"
+import "@fontsource/poppins/500.css"
 import theme from '../theme.font.js'
 
 

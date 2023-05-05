@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Card, Flex, Heading, Image, List, ListItem, OrderedList, Text } from '@chakra-ui/react';
 import { Rating, ThinStar } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { toast } from 'react-hot-toast';
 
 const Recipe = ({ recipe }) => {
+   
     const customStyles = {
         itemShapes: ThinStar,
         activeFillColor: 'rgba(255, 105, 40, 1)',
@@ -25,7 +26,10 @@ const Recipe = ({ recipe }) => {
             </Box>
             <Box mb='10px'><Rating itemStyles={customStyles} style={{ maxWidth: 250 }} value={rating} readOnly /></Box>
             
-           <Button p='25px' onClick={()=>toast.success('Added to Favorites')} color='black' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>Add To Favorite</Button>
+                <Button p='25px' onClick={(event) => {
+                    event.currentTarget.disabled = true;
+                    toast.success('Added to Favorites')
+                }} color='black' borderRadius='3xl' bgColor='rgba(255, 105, 40, 1)'>Add To Favorite</Button>
             
         </Flex>
         </div>

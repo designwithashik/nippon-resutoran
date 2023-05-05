@@ -6,7 +6,7 @@ import { Box, Flex, Spinner } from '@chakra-ui/react';
 const PrivateRoute = ({ children }) => {
     const { loading, user } = useContext(AuthContext);
     const location = useLocation()
-    console.log(location)
+    console.log('Loading', loading)
     if(loading) {
         return <Flex justifyContent='center' alignItems='center' h='80vh'>
             <Spinner 

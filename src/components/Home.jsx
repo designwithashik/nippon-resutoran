@@ -18,7 +18,7 @@ const Home = () => {
     const client2 = 'https://i.ibb.co/BZpSPsg/Ellipse-15.png'
     
     const { chefs, loading } = useContext(AuthContext);
-    console.log(chefs)
+    
 
     if (loading) {
         return (<Flex justifyContent='center' alignItems='center' h='80vh'>
@@ -74,21 +74,26 @@ const Home = () => {
             </Flex>
 
 
-            <Box mt={{base:'200px', md: '120px'}} mb={{base: '400px', md: '220px'}}   px={{base:'20px', md: '100px', lg: '165px'}} pb='100px' pt='75px' position='relative' bgColor='rgba(255, 226, 212, 1)'>
+            <Box mt='120px'   px={{base:'20px', md: '100px', lg: '165px'}} py='100px'  position='relative' bgColor='rgba(255, 226, 212, 1)'>
                 <Image position='absolute' top={{ base:'-130px', md:'-100px'}} src={lemon}></Image>
                 <Heading fontWeight='bold' textAlign='center'>Client Feedback
                 </Heading>
-                <Flex gap='30px' flexDir={{ base: 'column', md: 'row' }} flexWrap={{ base: 'wrap', md: 'nowrap' }} px={{ base: '20px', md: '100px', lg: '165px' }} bottom={{ base:'-295px',md:'-125px'}} position='absolute' justifyContent='space-evenly'>
+               
+            </Box>
+            <Box mt='30px' mb='120px'>
+            <Flex gap='30px' flexDir={{ base: 'column', md: 'row' }} flexWrap={{ base: 'wrap', md: 'nowrap' }} px={{ base: '20px', md: '100px', lg: '165px' }} bottom={{ base:'195px',md:'125px'}} justifyContent='space-evenly'>
                     <Card w={{base:'75%',md:'30%'}} bgColor='rgba(255, 105, 40, 1)' p='10px' borderRadius='xl' position='relative'>
                         <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client1}></Image>
                         <Text mt='19px' fontSize={{ base: 'sm', lg:'md'}} fontWeight='light' color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
                     </Card>
-                    <Card display={{ base: 'none', md:'block'}}  w={{base:'75%',md:'30%'}} bgColor='rgba(0, 0, 0, 0.9)' p='10px' borderRadius='xl' position='relative'>
+                    <Card  w={{base:'75%',md:'30%'}} bgColor='rgba(0, 0, 0, 0.9)' p='10px' borderRadius='xl' position='relative'>
                         <Image position='absolute' h='40px' w='40px' left='5' top='-5' src={client2}></Image>
                         <Text mt='19px' fontWeight='light' fontSize={{ base: 'sm', lg:'md'}} color='white'>Ongoing employee feedback is key to moving away from outdated performance reviews and towards driving employee development. Employee feedback is information given about a person's actions or accomplishments at work, which is then used to guide future improvement.</Text>
                     </Card>
                 </Flex>
-            </Box> </>
+            </Box>
+        </>
+            
     )
 
 
